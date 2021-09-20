@@ -6,6 +6,7 @@ import Projects from "./Projects.js";
 import Contact from "./Contact.js";
 import About from "./About.js";
 import './App.scss';
+import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
   return (
@@ -27,9 +28,9 @@ function App() {
         <Route path="/contact" component={Contact} />
 
         <div className="display-options">
-          <button>&gt; minimalist</button>
-          <button>&gt; vibrant</button>
-          <button>&gt; traditional</button>
+          <i className="fa fa-adjust"></i>
+          <i className="fa fa-paint-brush"></i>
+          <i className="fa fa-newspaper-o"></i>
         </div>
       </div>
     </BrowserRouter>
