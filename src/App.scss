@@ -1,0 +1,54 @@
+.App {
+  width: 90vw;
+  margin: 32px auto;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.navigation-sub {
+  a {
+    margin: 0px 1vw;
+    padding-left: 1vw;
+    line-height: 45px;
+    height: 45px;
+    text-decoration: none;
+    color: black;
+    border-bottom: solid 1px rgba(0, 0, 0, 0);
+    font-size: 110%;
+    vertical-align: middle;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      border-bottom: solid 1px black;
+      font-size: 140%;
+    }
+  }
+}
+
+.display-options {
+  position: absolute;
+  bottom: 50vh;
+  left: 8px;
+  button {
+    display: block;
+    font-weight: 300;
+    margin: 2px 8px;
+    background-color: white;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0);
+    font-size: 110%;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      border-bottom: solid 1px black;
+      font-size: 140%;
+    }
+  }
+}
