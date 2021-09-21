@@ -23,30 +23,39 @@
 }
 
 .mono {
-  .project-card {
-    position: relative;
-    width: calc(35vw + 16px);
-    .project-image {
-      backdrop-filter: blur(4px);
-      padding: 16px;
-      border-right: solid 1px white;
-      border-bottom: solid 1px white;
-    }
-    .project-title {
-      font-size: 200%;
-      color: white;
-      transform: rotate(90deg);
-      transform-origin: center right;
-      position: absolute;
-      top: calc(35vw + 16px);
-      right: -30px;
-      width: calc(35vw + 16px)
-    }
-    .project-description {
-      text-align: right;
-      font-size: 100%;
-      color: white;
-      width: calc(35vw + 16px)
+  .project-flex{
+    display: block;
+    overflow-y: scroll;
+    height: 70vh;
+    .project-card {
+      position: relative;
+      width: calc(60vw + 16px);
+      margin: 0 auto;
+      .project-image {
+        backdrop-filter: blur(4px);
+        padding: 16px;
+        border-right: solid 1px white;
+        border-bottom: solid 1px white;
+        width: 60vw;
+      }
+      .project-title {
+        font-size: 200%;
+        color: white;
+        transform: rotate(90deg);
+        transform-origin: center right;
+        position: absolute;
+        top: calc(60vw + 16px);
+        right: -30px;
+        width: calc(60vw + 16px)
+      }
+      .project-description {
+        text-align: right;
+        font-size: 100%;
+        color: white;
+        width: calc(60vw + 16px);
+        padding-bottom: 5vh;
+        margin-bottom: 5vh;
+      }
     }
   }
 }
@@ -61,7 +70,7 @@
     }
     .project-title {
       position: absolute;
-      top: calc(50% - 66px);
+      top: calc(5vw);
       font-size: 250%;
       text-align: center;
       vertical-align: middle;
@@ -94,21 +103,20 @@
 
 .type {
   .project-card {
-    position: relative;
     .project-image {
       border: solid 1px black;
+      width: 15vw;
+      float: left;
+      margin-bottom: 16px;
+      margin-right: 16px;
     }
     .project-title {
-      text-align: right;
+      text-align: left;
       font-size: 200%;
-      position: absolute;
-      top: -24px;
-      right: 16px;
       color: black;
     }
     .project-description {
-      width: 25vw;
-      font-size: 100%;
+      font-size: 120%;
       color: black;
     }
   }
