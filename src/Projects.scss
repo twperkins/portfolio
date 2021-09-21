@@ -1,0 +1,115 @@
+.project-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  width: calc(35vw);
+  margin: 8px;
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+  .project-image {
+    width: 35vw;
+  }
+  .project-title {
+    width: calc(35vw)
+  }
+  .project-description {
+    width: calc(35vw)
+  }
+}
+
+.mono {
+  .project-card {
+    position: relative;
+    width: calc(35vw + 16px);
+    .project-image {
+      backdrop-filter: blur(4px);
+      padding: 16px;
+      border-right: solid 1px white;
+      border-bottom: solid 1px white;
+    }
+    .project-title {
+      font-size: 200%;
+      color: white;
+      transform: rotate(90deg);
+      transform-origin: center right;
+      position: absolute;
+      top: calc(35vw + 16px);
+      right: -30px;
+      width: calc(35vw + 16px)
+    }
+    .project-description {
+      text-align: right;
+      font-size: 100%;
+      color: white;
+      width: calc(35vw + 16px)
+    }
+  }
+}
+
+.tint {
+  .project-card {
+    position: relative;
+    transition: all ease-out 0.3s;
+    .project-image {
+      filter: brightness(50%);
+      transition: all ease-out 0.3s;
+    }
+    .project-title {
+      position: absolute;
+      top: calc(50% - 66px);
+      font-size: 250%;
+      text-align: center;
+      vertical-align: middle;
+      height: 100px;
+      line-height: 100px;
+      color: white;
+      mix-blend-mode: difference;
+      transition: all ease-out 0.3s;
+    }
+    .project-description {
+      color: #282842;
+      transition: all ease-out 0.3s;
+    }
+    &:hover {
+      .project-image {
+        filter: brightness(80%);
+      }
+      .project-title {
+        font-size: 400%;
+        text-align: center;
+        color: white;
+        mix-blend-mode: difference;
+      }
+      .project-description {
+        color: #282842;
+      }
+    }
+  }
+}
+
+.type {
+  .project-card {
+    position: relative;
+    .project-image {
+      border: solid 1px black;
+    }
+    .project-title {
+      text-align: right;
+      font-size: 200%;
+      position: absolute;
+      top: -24px;
+      right: 16px;
+      color: black;
+    }
+    .project-description {
+      width: 25vw;
+      font-size: 100%;
+      color: black;
+    }
+  }
+}

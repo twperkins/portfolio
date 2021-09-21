@@ -1,10 +1,30 @@
 body {
   margin: 0;
-  font-family: 'Barlow Condensed', sans-serif;
-  // font-family: 'Poiret One', cursive;
-  // font-family: 'Special Elite', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
-  // background-color: cornsilk;
+  height: calc(100vh - 32px);
+}
+
+h2 {
+  font-size: 200%;
+}
+
+.mono {
+  font-family: 'Barlow Condensed', sans-serif;
+  background-image: url(./assets/mountain.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.tint {
+  font-family: 'Poiret One', cursive;
+  background: linear-gradient(to right, #f7797d80, #fbd88680, #c6ffdd80), url(https://grainy-gradients.vercel.app/noise.svg);
+  color: #282842;
+  text-transform: lowercase;
+}
+
+.type {
+  font-family: 'Special Elite', cursive;
+  background-color: cornsilk;
 }

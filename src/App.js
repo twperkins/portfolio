@@ -33,10 +33,10 @@ function App() {
         <div className="navigation">
           <img src={logo} className="logo" alt="Logo" />
           <div className="navigation-sub">
-            <Link to="/" className="item">&lt;Welcome /&gt;</Link>
-            <Link to="/projects" className="item">&lt;Projects /&gt;</Link>
-            <Link to="/about" className="item">&lt;About /&gt;</Link>
-            <Link to="/contact" className="item">&lt;Contact /&gt;</Link>
+            <Link to="/" className="item">Welcome</Link>
+            <Link to="/projects" className="item">Projects</Link>
+            <Link to="/about" className="item">About</Link>
+            <Link to="/contact" className="item">Contact</Link>
           </div>
         </div>
 

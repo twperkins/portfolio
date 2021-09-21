@@ -4,13 +4,11 @@ import './App.scss';
 
 function Thumbnail(props) {
   return (
-    <div className="project">
+    <div className="project-card">
       <Link to={props.link}>
-        <div className="project-image">
-          <img src={props.image} alt="Project" />
-        </div>
+        <img className="project-image" src={props.image} alt={props.title} />
         <div className="project-title">{props.title}</div>
-        <div className="project-category">{props.category}</div>
+        <div className="project-description">{props.description}</div>
       </Link>
     </div>
   );
