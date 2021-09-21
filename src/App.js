@@ -9,6 +9,24 @@ import './App.scss';
 import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
+  const addMono = (event) => {
+    document.body.classList.add('mono');
+    document.body.classList.remove('tint');
+    document.body.classList.remove('type');
+  }
+
+  const addTint = (event) => {
+    document.body.classList.add('tint');
+    document.body.classList.remove('mono');
+    document.body.classList.remove('type');
+  }
+
+  const addType = (event) => {
+    document.body.classList.add('type');
+    document.body.classList.remove('mono');
+    document.body.classList.remove('tint');
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -28,9 +46,9 @@ function App() {
         <Route path="/contact" component={Contact} />
 
         <div className="display-options">
-          <i className="fa fa-adjust"></i>
-          <i className="fa fa-paint-brush"></i>
-          <i className="fa fa-newspaper-o"></i>
+          <i className="fa fa-adjust" onClick={addMono}></i>
+          <i className="fa fa-paint-brush" onClick={addTint}></i>
+          <i className="fa fa-newspaper-o" onClick={addType}></i>
         </div>
       </div>
     </BrowserRouter>
