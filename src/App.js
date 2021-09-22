@@ -30,25 +30,28 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="navigation">
-          <img src={logo} className="logo" alt="Logo" />
-          <div className="navigation-sub">
-            <Link to="/" className="item">Welcome</Link>
-            <Link to="/projects" className="item">Projects</Link>
-            <Link to="/about" className="item">About</Link>
-            <Link to="/contact" className="item">Contact</Link>
+        <div className="background"></div>
+        <div className="main-section">
+          <div className="navigation">
+            <img src={logo} className="logo" alt="Logo" />
+            <div className="navigation-sub">
+              <Link to="/" className="item">Welcome</Link>
+              <Link to="/projects" className="item">Projects</Link>
+              <Link to="/about" className="item">About</Link>
+              <Link to="/contact" className="item">Contact</Link>
+            </div>
           </div>
-        </div>
 
-        <Route exact path="/" component={Welcome} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
+          <Route exact path="/" component={Welcome} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
 
-        <div className="display-options">
-          <i className="fa fa-adjust" onClick={addMono}></i>
-          <i className="fa fa-paint-brush" onClick={addTint}></i>
-          <i className="fa fa-newspaper-o" onClick={addType}></i>
+          <div className="display-options">
+            <i className="fa fa-adjust" onClick={addMono}></i>
+            <i className="fa fa-paint-brush" onClick={addTint}></i>
+            <i className="fa fa-newspaper-o" onClick={addType}></i>
+          </div>
         </div>
       </div>
     </BrowserRouter>

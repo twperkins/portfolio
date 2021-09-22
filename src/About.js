@@ -8,95 +8,67 @@ function About(props) {
       <h2>About</h2>
       <VerticalTimeline>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
+          className="timeline-work"
           contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-          date="2011 - present"
+          date="Oct 2021 - present"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           // icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Creative Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+          <h3 className="timeline-title">Teaching Assistant</h3>
+          <h4 className="timeline-subtitle">Le Wagon</h4>
           <p>
-            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+            Following the Le Wagon bootcamp I was chosen as one of 3, out of 30, to help the next batch start their coding journey!
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2010 - 2011"
+          className="timeline-study"
+          date="Jul 2021 - Sep 2021"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           // icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Art Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+          <h3 className="timeline-title">Full Stack Developer Student</h3>
+          <h4 className="timeline-subtitle">Le Wagon</h4>
           <p>
-            Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+            I undertook a 9 week intensive bootcamp to fulfil a career shift from talking about the future to making the future.
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2008 - 2010"
+          className="timeline-work"
+          date="2018 - 2021"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           // icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+          <h3 className="timeline-title">Key Account Manager</h3>
+          <h4 className="timeline-subtitle">Meltwater</h4>
           <p>
-            User Experience, Visual Design
+            From the analyst position I moved directly into the Key Account Manager role. In this, I managed a portfolio of some of the largest clients in the UK with a focus on the financial and higher education sectors. Finished in the top 3 for both retention and growth in 2019.
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2006 - 2008"
+          className="timeline-work"
+          date="2016 - 2018"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           // icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+          <h3 className="timeline-title">Analyst</h3>
+          <h4 className="timeline-subtitle">Meltwater</h4>
           <p>
-            User Experience, Visual Design
+            Helping to found the UK analyst team in early 2017, I produced reports for a range of clients from World Rugby to Danone tailored to their business needs.
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="April 2013"
+          className="timeline-study"
+          date="2012 - 2015"
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
           // icon={<SchoolIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-          <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+          <h3 className="timeline-title">B.A. History(Ancient and Modern)</h3>
+          <h4 className="timeline-subtitle">University of Oxford</h4>
           <p>
-            Strategy, Social Media
+            Spent 3 far too brief years spent delving into history at Oxford. Following my interests, I specialised in the collapse of the Roman Republic for the ancient aspect and the Medieval and late Early Modern periods for the modern parts.
           </p>
         </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="November 2012"
-          iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-          // icon={<SchoolIcon />}
-        >
-          <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-          <p>
-            Creative Direction, User Experience, Visual Design
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2002 - 2006"
-          iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-          // icon={<SchoolIcon />}
-        >
-          <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-          <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-          <p>
-            Creative Direction, Visual Design
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-          // icon={<StarIcon />}
-        />
       </VerticalTimeline>
     </div>
   )

@@ -1,4 +1,22 @@
 .App {
+  width: 100vw;
+  position: relative;
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.background {
+  z-index: -1;
+  height: 150vh;
+  transform: translateZ(-3px) scale(4);
+}
+
+.main-section {
+  position: absolute;
+  top: 0px;
+  left: 7.5vw;
   width: 85vw;
   margin: 32px auto;
 }
@@ -56,6 +74,11 @@
 }
 
 .mono {
+  .background {
+    background-image: url(./assets/mountain.jpg);
+    background-size: cover;
+    background-position: center;
+  }
   .logo {
     filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(58deg) brightness(108%) contrast(101%);
   }
@@ -92,6 +115,9 @@
 }
 
 .tint {
+  .background {
+    background: linear-gradient(to right, #f7797d80, #fbd88680, #c6ffdd80), url(https://grainy-gradients.vercel.app/noise.svg);
+  }
   .logo {
     filter: invert(10%) sepia(7%) saturate(7285%) hue-rotate(208deg) brightness(89%) contrast(83%);
   }
