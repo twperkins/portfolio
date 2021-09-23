@@ -23,6 +23,11 @@
 }
 
 .mono {
+  .Projects {
+    h2 {
+      text-align: center;
+    }
+  }
   .project-flex{
     display: block;
     overflow-y: scroll;
@@ -32,11 +37,15 @@
       width: calc(60vw + 16px);
       margin: 0 auto;
       .project-image {
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(0px);
         padding: 16px;
         border-right: solid 1px white;
         border-bottom: solid 1px white;
         width: 60vw;
+        transition: 0.6s;
+        &:hover {
+          backdrop-filter: blur(4px);
+        }
       }
       .project-title {
         font-size: 200%;
@@ -61,6 +70,12 @@
 }
 
 .tint {
+  .Projects {
+    h2 {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
   .project-card {
     position: relative;
     transition: all ease-out 0.3s;
@@ -102,7 +117,19 @@
 }
 
 .type {
+  .Projects {
+    h2 {
+      border-bottom: solid 1px black;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
   .project-card {
+    padding: 8px;
+    transition: 0.3s;
+    &:hover {
+        box-shadow: 0px 3px;
+      }
     .project-image {
       border: solid 1px black;
       width: 15vw;
@@ -114,6 +141,7 @@
       text-align: left;
       font-size: 200%;
       color: black;
+      text-decoration: underline;
     }
     .project-description {
       font-size: 120%;

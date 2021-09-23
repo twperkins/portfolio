@@ -1,11 +1,21 @@
+.About {
+  h2 {
+    text-align: center;
+  }
+}
+
 .vertical-timeline-element-content {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .vertical-timeline-element-icon {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.timeline-title {
+  margin-top: 0px;
 }
 
 .mono {
@@ -13,12 +23,14 @@
     border: solid 1px white;
     background-color: transparent;
     backdrop-filter: blur(4px);
+    box-shadow: 5px 5px !important;
   }
   .vertical-timeline-element-content-arrow {
     border-right: 7px solid white;
   }
   .vertical-timeline-element-icon {
     border-radius: 0%;
+    border: solid 4px white;
   }
   .timeline-current-icon {
     background-color: rgb(147, 207, 207);
@@ -38,13 +50,12 @@
     top: 0;
     left: 18px;
     height: 100%;
-    width: 4px;
+    width: 2px;
     background: black;
   }
   .vertical-timeline-element-content {
     border: solid 1px black;
-    background-color: transparent;
-    backdrop-filter: blur(4px);
+    background: linear-gradient(to right, #c6ffdd18, #fbd88618, #f7797d18) !important;
     h3 {
       color: black;
     }
@@ -76,6 +87,9 @@
 }
 
 .type {
+  .vertical-timeline {
+    border-top: solid 4px black;
+  }
   .vertical-timeline::before {
     content: '';
     position: absolute;
@@ -88,7 +102,6 @@
   .vertical-timeline-element-content {
     border: solid 2px black;
     background-color: transparent;
-    backdrop-filter: blur(4px);
     h3 {
       color: black;
     }

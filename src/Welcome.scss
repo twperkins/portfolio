@@ -29,11 +29,16 @@
   padding-top: 5vh;
   .quote {
     q {
-      font-size: 150%;
+      font-size: 100%;
     }
     p {
       margin-top: 4px;
       font-size: 120%;
+    }
+  }
+  .skills {
+    p {
+      margin: 0px;
     }
   }
   h3 {
