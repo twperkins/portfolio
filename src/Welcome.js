@@ -31,7 +31,7 @@ function Welcome(props) {
         {/* <p>Ruby | Rails | CSS | HTML | JavaScript | SQL | Git | CLI | Figma</p> */}
         <div className="skills">
           <p>Ruby | Rails</p>
-          <p>CSS | HTML | JavaScript</p>
+          <p>CSS | HTML | JavaScript | React</p>
           <p>SQL</p>
           <p>Git | CLI</p>
           <p>Figma</p>
