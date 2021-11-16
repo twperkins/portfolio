@@ -9,19 +9,19 @@ import './App.scss';
 import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
-  const addMono = (event) => {
+  const addMono = () => {
     document.body.classList.add('mono');
     document.body.classList.remove('tint');
     document.body.classList.remove('type');
   }
 
-  const addTint = (event) => {
+  const addTint = () => {
     document.body.classList.add('tint');
     document.body.classList.remove('mono');
     document.body.classList.remove('type');
   }
 
-  const addType = (event) => {
+  const addType = () => {
     document.body.classList.add('type');
     document.body.classList.remove('mono');
     document.body.classList.remove('tint');
