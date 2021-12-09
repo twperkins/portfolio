@@ -7,6 +7,13 @@
   grid-template-columns: 2fr 1fr;
 }
 
+.Welcome-lower {
+  margin-top: 15vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  padding-bottom: 5vh;
+}
+
 .personal-info {
   h1 {
     padding-top: 50vh;
@@ -27,15 +34,6 @@
 
 .personal-description {
   padding-top: 5vh;
-  .quote {
-    q {
-      font-size: 100%;
-    }
-    p {
-      margin-top: 4px;
-      font-size: 120%;
-    }
-  }
   .skills {
     p {
       margin: 0px;
@@ -50,8 +48,33 @@
   }
 }
 
+.quote-section {
+  width: 60%;
+  margin: 0 auto;
+  h2 {
+    margin-top: 32px;
+    text-align: center;
+  }
+}
+
+.quote {
+  text-align: center;
+  q {
+    font-weight: li;
+    font-size: 100%;
+  }
+  p {
+    margin-top: 8px;
+    font-size: 120%;
+  }
+}
+
 .mono {
   .Welcome {
+    backdrop-filter: blur(4px);
+    border: solid 1px white;
+  }
+  .Welcome-lower {
     backdrop-filter: blur(4px);
     border: solid 1px white;
   }
@@ -76,6 +99,9 @@
 .type {
   .Welcome {
     border-left: solid 4px black;
+  }
+  .Welcome-lower {
+    display: none;
   }
   .typewriter {
     color: cornsilk;
