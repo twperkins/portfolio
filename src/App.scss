@@ -8,8 +8,8 @@
 }
 
 .background {
-  z-index: -1;
-  height: 150vh;
+  // z-index: -1;
+  // height: 150vh;
   transform: translateZ(-3px) scale(4);
 }
 
@@ -48,9 +48,12 @@
 }
 
 .display-options {
-  position: fixed;
-  top: calc(50vh - 170px);
+  height: 140px;
+  width: 60px;
+  position: sticky;
+  top: calc(50vh - 85px);
   left: -2px;
+  z-index: 5;
   border: solid 2px black;
   box-shadow: 5px 5px;
   .fa {
@@ -78,6 +81,8 @@
     background-image: url(./assets/mountain.jpg);
     background-size: cover;
     background-position: center;
+    height: 150vh;
+    transform: translateZ(-3px) scale(4);
   }
   .logo {
     filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(58deg) brightness(108%) contrast(101%);
@@ -117,6 +122,8 @@
 .tint {
   .background {
     background: linear-gradient(to right, #f7797d80, #fbd88680, #c6ffdd80), url(https://grainy-gradients.vercel.app/noise.svg);
+    height: 150vh;
+    transform: translateZ(-3px) scale(4);
   }
   .logo {
     filter: invert(10%) sepia(7%) saturate(7285%) hue-rotate(208deg) brightness(89%) contrast(83%);

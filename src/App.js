@@ -30,6 +30,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <div className="display-options">
+          <i className="fa fa-adjust" onClick={addMono}></i>
+          <i className="fa fa-paint-brush" onClick={addTint}></i>
+          <i className="fa fa-newspaper-o" onClick={addType}></i>
+        </div>
         <div className="background"></div>
         <div className="main-section">
           <div className="navigation">
@@ -47,11 +52,6 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
 
-          <div className="display-options">
-            <i className="fa fa-adjust" onClick={addMono}></i>
-            <i className="fa fa-paint-brush" onClick={addTint}></i>
-            <i className="fa fa-newspaper-o" onClick={addType}></i>
-          </div>
         </div>
       </div>
     </BrowserRouter>

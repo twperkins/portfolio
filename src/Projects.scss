@@ -5,8 +5,8 @@
 }
 
 .project-card {
-  width: calc(35vw);
-  margin: 8px;
+  width: calc(60vw + 16px);
+  margin: 0 auto;
   position: relative;
   a {
     text-decoration: none;
@@ -15,10 +15,10 @@
     width: 35vw;
   }
   .project-title {
-    width: calc(35vw)
+    width: 35vw;
   }
   .project-description {
-    width: calc(35vw)
+    width: 35vw;
   }
 }
 
@@ -28,43 +28,37 @@
       text-align: center;
     }
   }
-  .project-flex{
-    display: block;
-    overflow-y: scroll;
-    height: 70vh;
-    .project-card {
-      position: relative;
-      width: calc(60vw + 16px);
-      margin: 0 auto;
-      .project-image {
-        backdrop-filter: blur(0px);
-        padding: 16px;
+  .project-card {
+    .project-image {
+      backdrop-filter: blur(0px);
+      padding: 16px;
+      border-right: solid 1px rgba(255, 255, 255, 0);
+      border-bottom: solid 1px rgba(255, 255, 255, 0);
+      width: 60vw;
+      transition: 0.6s;
+      &:hover {
+        backdrop-filter: blur(16px);
         border-right: solid 1px white;
         border-bottom: solid 1px white;
-        width: 60vw;
-        transition: 0.6s;
-        &:hover {
-          backdrop-filter: blur(4px);
-        }
       }
-      .project-title {
-        font-size: 200%;
-        color: white;
-        transform: rotate(90deg);
-        transform-origin: center right;
-        position: absolute;
-        top: calc(60vw + 16px);
-        right: -30px;
-        width: calc(60vw + 16px)
-      }
-      .project-description {
-        text-align: right;
-        font-size: 100%;
-        color: white;
-        width: calc(60vw + 16px);
-        padding-bottom: 5vh;
-        margin-bottom: 5vh;
-      }
+    }
+    .project-title {
+      font-size: 200%;
+      color: white;
+      transform: rotate(90deg);
+      transform-origin: center right;
+      position: absolute;
+      top: calc(60vw + 16px);
+      right: -32px;
+      width: calc(60vw + 16px)
+    }
+    .project-description {
+      text-align: right;
+      font-size: 100%;
+      color: white;
+      width: calc(60vw + 16px);
+      padding-bottom: 5vh;
+      margin-bottom: 5vh;
     }
   }
 }
@@ -77,15 +71,18 @@
     }
   }
   .project-card {
-    position: relative;
+    width: 35vw;
+    margin: 8px;
     transition: all ease-out 0.3s;
     .project-image {
       filter: brightness(50%);
+      border-top-left-radius: 32px;
+      border-bottom-right-radius: 32px;
       transition: all ease-out 0.3s;
     }
     .project-title {
       position: absolute;
-      top: calc(5vw);
+      top: 30%;
       font-size: 250%;
       text-align: center;
       vertical-align: middle;
@@ -96,21 +93,25 @@
       transition: all ease-out 0.3s;
     }
     .project-description {
-      color: #282842;
+      position: absolute;
+      top: 20%;
+      width: 30vw;
+      color: rgba(255, 255, 255, 0);
       transition: all ease-out 0.3s;
+      padding: 0px 32px;
+      mix-blend-mode: difference;
     }
     &:hover {
       .project-image {
-        filter: brightness(80%);
+        filter: brightness(10%);
       }
       .project-title {
         font-size: 400%;
         text-align: center;
-        color: white;
-        mix-blend-mode: difference;
+        color: rgba(255, 255, 255, 0);
       }
       .project-description {
-        color: #282842;
+        color: white;
       }
     }
   }
@@ -124,28 +125,43 @@
       margin-right: 16px;
     }
   }
-  .project-card {
-    padding: 8px;
-    transition: 0.3s;
-    &:hover {
-        box-shadow: 0px 3px;
+  .project-flex{
+    display: block;
+    overflow-y: scroll;
+    height: 70vh;
+    .project-card {
+      padding: 8px;
+      transition: 0.3s;
+      margin-bottom: 64px;
+      padding-bottom: 32px;
+      .project-image {
+        filter: sepia(60%);
+        border: solid 1px black;
+        float: left;
+        margin-bottom: 16px;
+        margin-right: 16px;
+        width: 35vw;
+        transition: 0.3s;
+        margin-right: 32px;
       }
-    .project-image {
-      border: solid 1px black;
-      width: 15vw;
-      float: left;
-      margin-bottom: 16px;
-      margin-right: 16px;
-    }
-    .project-title {
-      text-align: left;
-      font-size: 200%;
-      color: black;
-      text-decoration: underline;
-    }
-    .project-description {
-      font-size: 120%;
-      color: black;
+      .project-title {
+        text-align: left;
+        font-size: 220%;
+        color: black;
+        text-decoration: underline;
+        width: 60vw;
+      }
+      .project-description {
+        font-size: 160%;
+        color: black;
+        width: 60vw;
+      }
+      &:hover {
+        box-shadow: 0px 3px;
+        .project-image {
+          filter: sepia(0%);
+        }
+      }
     }
   }
 }
