@@ -13,8 +13,32 @@ function About(props) {
         <VerticalTimelineElement
           className="timeline-current"
           contentStyle={{ background: 'rgba(0, 0, 0, 0)', color: '#fff' }}
-          date="2021 - present"
+          date="2023 - present"
           iconClassName="timeline-current-icon"
+          icon={<WorkIcon />}
+        >
+          <h3 className="timeline-title">Full Stack Engineer</h3>
+          <h4 className="timeline-subtitle">Appear Here</h4>
+          <p>
+            One of 3 engineers taking ownership of the development journey from idea to deployment.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="timeline-work"
+          date="2022 - 2023"
+          iconClassName="timeline-work-icon"
+          icon={<WorkIcon />}
+        >
+          <h3 className="timeline-title">Graduate Engineer</h3>
+          <h4 className="timeline-subtitle">Finbourne Technology</h4>
+          <p>
+            Working within the web team, I implemented complex financial data APIs into the core web platform.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="timeline-work"
+          date="2021 - 2023"
+          iconClassName="timeline-work-icon"
           icon={<WorkIcon />}
         >
           <h3 className="timeline-title">Teaching Assistant</h3>
