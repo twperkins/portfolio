@@ -34,15 +34,18 @@
 
 .personal-description {
   padding-top: 5vh;
+
   .skills {
     p {
       margin: 0px;
     }
   }
+
   h3 {
     margin-top: 5vh;
     font-size: 150%;
   }
+
   p {
     font-size: 120%;
   }
@@ -51,6 +54,7 @@
 .quote-section {
   width: 60%;
   margin: 0 auto;
+
   h2 {
     margin-top: 32px;
     text-align: center;
@@ -59,10 +63,12 @@
 
 .quote {
   text-align: center;
+
   q {
     font-weight: li;
     font-size: 100%;
   }
+
   p {
     margin-top: 8px;
     font-size: 120%;
@@ -74,13 +80,16 @@
     backdrop-filter: blur(4px);
     border: solid 1px white;
   }
+
   .Welcome-lower {
     backdrop-filter: blur(4px);
     border: solid 1px white;
   }
+
   .quote {
     border-bottom: solid 1px white;
   }
+
   .typewriter {
     background-color: transparent;
   }
@@ -91,6 +100,7 @@
     background-color: transparent;
     color: #282842;
   }
+
   .typewriter-cursor {
     color: #282842;
   }
@@ -100,10 +110,30 @@
   .Welcome {
     border-left: solid 4px black;
   }
+
   .Welcome-lower {
     display: none;
   }
+
   .typewriter {
     color: cornsilk;
+  }
+}
+
+@media (max-width: 768px) {
+  .Welcome {
+    display: block;
+    padding-left: 20vw;
+  }
+
+  .personal-info {
+    h1 {
+      padding-top: 0;
+    }
+  }
+
+  .Welcome-lower {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
   }
 }

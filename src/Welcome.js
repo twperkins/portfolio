@@ -21,16 +21,15 @@ function Welcome(props) {
         </div>
         <div className="personal-description">
           <h3>Welcome</h3>
-          <p>Hi, Tom here. After studying history at Oxford and working for 4 years in client facing roles, the next logical step was to learn to code. Currently based in London, I spend my time working on personal projects, teaching at Le Wagon, and diving head first into new challenges.</p>
+          <p>Hi, Tom here. After studying history at Oxford and working for 4 years in client facing roles, obviously the next logical step was to learn to code...</p>
+          <p>Curently working in a small team of engineers building the future of retail</p>
           <h3>Skills</h3>
           {/* <p>Ruby | Rails | CSS | HTML | JavaScript | SQL | Git | CLI | Figma</p> */}
           <div className="skills">
-            <p>Ruby | Rails | Python</p>
-            <p>CSS | HTML | JavaScript</p>
-            <p>React | Stimulus</p>
-            <p>SQL | Postgres</p>
-            <p>Git | CLI</p>
-            <p>Figma</p>
+            <p>Ruby | JavaScript | Typescript | Python</p>
+            <p>Rails | React | Angular</p>
+            <p>SQL | Postgres | Graphql</p>
+            <p>Git | Kubernetes | Docker | AWS</p>
           </div>
           {/* <p>Put CV link here</p>
           <p>Add social links here</p> */}
