@@ -1,12 +1,14 @@
+@import 'colors';
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: calc(100vh - 32px);
-  background-color: rgb(23, 32, 34);
+  background-color: $background;
   font-family: 'Barlow Condensed', sans-serif;
-  color: white;
-  cursor: url('./assets/cursor.png') 12 12, auto;
+  color: $highlight;
+  cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
 }
 
 h2 {

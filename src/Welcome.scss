@@ -1,3 +1,5 @@
+@import 'colors';
+
 .welcome-container {
   height: 100vh;
   scroll-snap-align: start;
@@ -15,8 +17,8 @@
   }
 
   .typewriter {
-    background-color: rgb(23, 32, 34);
-    color: white;
+    background-color: $background;
+    color: $highlight;
     font-size: 200%;
   }
 

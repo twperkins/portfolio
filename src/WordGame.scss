@@ -1,3 +1,5 @@
+@import 'colors';
+
 .word-container {
   width: 288px;
 }
@@ -15,10 +17,10 @@
 .letter-input {
   background: none;
   border: none;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  border-bottom: solid 1px $highlight-50;
   width: 20px;
-  color: white;
-  cursor: url('./assets/cursorClick.png') 12 12, auto;
+  color: $highlight;
+  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   transition: all 0.2s linear;
   caret-color: transparent;
   font: inherit;
@@ -26,18 +28,18 @@
   text-align: inherit;
 
   &:hover {
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px $highlight;
   }
 
   &:focus {
     outline: none;
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px $highlight;
   }
 
   &.guessed {
     transition: all 0.5s linear;
     border-bottom: none;
     width: 14px;
-    cursor: url('./assets/cursor.png') 12 12, auto;
+    cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
   }
 }
