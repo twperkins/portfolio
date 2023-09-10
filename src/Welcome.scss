@@ -1,28 +1,21 @@
-.Welcome {
-  margin-top: 5vh;
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-bottom: 5vh;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.Welcome-lower {
-  margin-top: 15vh;
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-bottom: 5vh;
+.welcome-container {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .personal-info {
   h1 {
-    padding-top: 50vh;
+    padding-top: 53vh;
     font-size: 400%;
     margin-bottom: 0px;
   }
 
   .typewriter {
-    background-color: black;
+    background-color: rgb(23, 32, 34);
     color: white;
     font-size: 200%;
   }
@@ -51,75 +44,6 @@
   }
 }
 
-.quote-section {
-  width: 60%;
-  margin: 0 auto;
-
-  h2 {
-    margin-top: 32px;
-    text-align: center;
-  }
-}
-
-.quote {
-  text-align: center;
-
-  q {
-    font-weight: li;
-    font-size: 100%;
-  }
-
-  p {
-    margin-top: 8px;
-    font-size: 120%;
-  }
-}
-
-.mono {
-  .Welcome {
-    backdrop-filter: blur(4px);
-    border: solid 1px white;
-  }
-
-  .Welcome-lower {
-    backdrop-filter: blur(4px);
-    border: solid 1px white;
-  }
-
-  .quote {
-    border-bottom: solid 1px white;
-  }
-
-  .typewriter {
-    background-color: transparent;
-  }
-}
-
-.tint {
-  .typewriter {
-    background-color: transparent;
-    color: #282842;
-  }
-
-  .typewriter-cursor {
-    color: #282842;
-  }
-}
-
-.type {
-  .Welcome {
-    border-left: solid 4px black;
-  }
-
-  .Welcome-lower {
-    display: none;
-  }
-
-  .typewriter {
-    color: cornsilk;
-  }
-}
-
 @media (max-width: 768px) {
   .Welcome {
     display: block;
@@ -130,10 +54,5 @@
     h1 {
       padding-top: 0;
     }
-  }
-
-  .Welcome-lower {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
   }
 }

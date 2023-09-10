@@ -2,7 +2,7 @@ import React from "react";
 import 'font-awesome/css/font-awesome.min.css';
 import './Contact.scss';
 
-function Contact(props) {
+const Contact = () => {
   return (
     <div className="Contact">
       <h2>Contact</h2>

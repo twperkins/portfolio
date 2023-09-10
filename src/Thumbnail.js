@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-function Thumbnail(props) {
+const Thumbnail = (props) => {
   return (
     <div className="project-card">
       <a href={props.link} target="_blank" rel="noopener noreferrer">
