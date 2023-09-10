@@ -75,6 +75,7 @@ const WordGame = () => {
     if (allInputsFilled) {
       const isWordGuessed = currentInput.join("").toLowerCase() === word.toLowerCase();
       setWordGuessed(isWordGuessed);
+
       setCurrentInput((prevInput) => {
         const clearedInput = [...prevInput];
         currentInput.forEach((input, i) => {
@@ -106,7 +107,7 @@ const WordGame = () => {
             </div>
           ))}
         </div>
-        <div>definition: {definition}</div>
+        <div className="definition">definition: {definition?.toLowerCase()}</div>
       </div>
     </>
   );
