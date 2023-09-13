@@ -1,8 +1,14 @@
-.App {
+@import 'colors';
+
+.app {
   position: relative;
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .link {
@@ -11,8 +17,8 @@
   opacity: 0.5;
   text-decoration: none;
   text-align: center;
-  z-index: 10;
-  cursor: url('./assets/cursorClick.png') 12 12, auto;
+  z-index: 5;
+  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   transition: all 1s linear;
 
   &:hover {
@@ -102,7 +108,7 @@
   width: 30vw;
   height: 80vh;
   transition: all 0.2s linear;
-  cursor: url('./assets/cursorClick.png') 12 12, auto;
+  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
 
   &:hover {
     height: 85vh;
