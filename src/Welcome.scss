@@ -3,10 +3,16 @@
 .welcome-container {
   height: 100vh;
   scroll-snap-align: start;
-  padding: 0 10vw;
+  padding: 0 15vw;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10vh 20vw;
+    height: 80vh;
+  }
 }
 
 .personal-info {
@@ -14,16 +20,28 @@
     padding-top: 53vh;
     font-size: 400%;
     margin-bottom: 0px;
+
+    @media (max-width: 768px) {
+      font-size: 300%;
+    }
   }
 
   .typewriter {
     background-color: $background;
     color: $highlight;
     font-size: 200%;
+
+    @media (max-width: 768px) {
+      font-size: 150%;
+    }
   }
 
   .typewriter-cursor {
     font-size: 200%;
+
+    @media (max-width: 768px) {
+      font-size: 150%;
+    }
   }
 }
 
@@ -39,10 +57,18 @@
   h3 {
     margin-top: 5vh;
     font-size: 150%;
+
+    @media (max-width: 768px) {
+      font-size: 120%;
+    }
   }
 
   p {
     font-size: 120%;
+
+    @media (max-width: 768px) {
+      font-size: 100%;
+    }
   }
 }
 

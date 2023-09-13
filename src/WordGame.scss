@@ -5,18 +5,22 @@
   height: 180px;
   border-top: solid 0.5px $highlight;
   position: relative;
+  margin-top: 23vh;
+
+  @media (max-width: 768px) {
+    width: 240px;
+  }
 }
 
 .game-toggle {
   position: absolute;
-  right: -16px;
+  right: 0px;
   height: 30px;
   width: 30px;
   top: -16px;
   background-color: $background;
   border-radius: 30px;
   text-align: center;
-  border: solid 0.5px $highlight;
   line-height: 30px;
   transition: all 0.5s ease-in-out;
   cursor: url("./assets/cursor/cursorClick.svg") 9 9, auto;
@@ -34,11 +38,15 @@
 }
 
 .game-title {
-  font-size: 20px;
+  font-size: 120%;
   transition: all 1s ease-in-out;
 
   &.hidden {
     transform: translateY(50px);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 120%;
   }
 }
 
@@ -59,6 +67,11 @@
 
   &.hidden {
     transform: translateY(-250px);
+  }
+
+  @media (max-width: 768px) {
+    width: 240px;
+    font-size: 120%;
   }
 }
 
@@ -87,6 +100,10 @@
     width: 14px;
     cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
   }
+
+  @media (max-width: 768px) {
+    width: 15px;
+  }
 }
 
 .definition-container {
@@ -101,4 +118,8 @@
 
 .definition-title {
   font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 120%;
+  }
 }
