@@ -1,4 +1,4 @@
-@import 'colors';
+@import "colors";
 
 .word-container {
   width: 280px;
@@ -18,24 +18,19 @@
   text-align: center;
   border: solid 0.5px $highlight;
   line-height: 30px;
-  transition: all 0.2s ease-in-out;
-  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
+  transition: all 0.5s ease-in-out;
+  cursor: url("./assets/cursor/cursorClick.svg") 9 9, auto;
 
   &.opposite {
-    rotate: (180deg);
+    transform: rotate(180deg);
   }
 }
 
 .game-title-container {
   position: absolute;
-  top: -21px;
+  top: -24px;
   left: 24px;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
-
-  &.hidden {
-    top: -24px;
-  }
 }
 
 .game-title {
@@ -73,17 +68,14 @@
   border-bottom: solid 1.5px $highlight-50;
   width: 20px;
   color: $highlight;
-  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
+  cursor: url("./assets/cursor/cursorClick.svg") 9 9, auto;
   transition: all 0.2s linear;
   caret-color: transparent;
   font: inherit;
   font-size: inherit;
   text-align: inherit;
 
-  &:hover {
-    border-bottom: solid 1.5px $highlight;
-  }
-
+  &:hover,
   &:focus {
     outline: none;
     border-bottom: solid 1.5px $highlight;

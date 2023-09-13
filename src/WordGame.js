@@ -8,6 +8,7 @@ const WordGame = () => {
   const [currentInput, setCurrentInput] = useState(Array(words.length).fill(""));
   const [wordGuessed, setWordGuessed] = useState(false);
   const [displayGame, setDisplayGame] = useState(false);
+  const inputRefs = useRef(Array(words.length).fill(null));
 
   useEffect(() => {
     fetch('https://random-word-api.herokuapp.com/word?number=20&length=9')
@@ -39,7 +40,6 @@ const WordGame = () => {
     fetchWordWithDefinition();
   }, [words]);
 
-  const inputRefs = useRef(Array(words.length).fill(null));
 
   const handleNextInput = (index, e) => {
     if (/^[a-zA-Z]$/.test(e.key) && e.key !== e.target.value) {
@@ -62,11 +62,7 @@ const WordGame = () => {
     const inputValue = e.target.value.toLowerCase();
     setCurrentInput((prevInput) => {
       const newInput = [...prevInput];
-      if (currentInput[index] === word[index].toLowerCase()) {
-        newInput[index] = currentInput[index];
-      } else {
-        newInput[index] = inputValue;
-      }
+      newInput[index] = currentInput[index] === word[index].toLowerCase() ? currentInput[index] : inputValue;
       return newInput;
     });
   };
@@ -78,52 +74,46 @@ const WordGame = () => {
       setWordGuessed(isWordGuessed);
 
       setCurrentInput((prevInput) => {
-        const clearedInput = [...prevInput];
-        currentInput.forEach((input, i) => {
-          if (input !== word[i].toLowerCase()) {
-            clearedInput[i] = "";
-          }
-        });
+        const clearedInput = prevInput.map((input, i) => (input !== word[i].toLowerCase() ? "" : input));
         return clearedInput;
       });
     }
   };
 
   const showGame = () => {
-    setDisplayGame(!displayGame)
-  }
-
+    setDisplayGame(!displayGame);
+  };
 
   return (
-    <>
-      <div className="word-container">
-        <div className={displayGame ? 'game-toggle' : 'game-toggle opposite'} onClick={() => showGame()}>&#x2963;</div>
-        <div className={displayGame ? 'game-title-container hidden' : 'game-title-container'}>
-          <div className={displayGame ? 'game-title hidden' : 'game-title'}>can you guess the word?</div>
-        </div>
-        <div className="game-container">
-          <div className={displayGame ? 'letter-container' : 'letter-container hidden'}>
-            {word?.split("").map((letter, index) => (
+    <div className="word-container">
+      <div className={`game-toggle ${displayGame ? "" : "opposite"}`} onClick={showGame}>
+        &#x2963;
+      </div>
+      <div className="game-title-container">
+        <div className={`game-title ${!displayGame ? "" : "hidden"}`}>can you guess the word?</div>
+      </div>
+      <div className="game-container">
+        <div className={`letter-container ${displayGame ? "" : "hidden"}`}>
+          {word &&
+            word.split("").map((letter, index) => (
               <div key={`container${index}`}>
                 <input
-                  className={`letter-input ${wordGuessed ? 'guessed' : ''}`}
-                  key={`input${index}`}
+                  className={`letter-input ${wordGuessed ? "guessed" : ""}`}
                   maxLength={1}
                   value={currentInput[index]}
                   onKeyDown={(e) => handleNextInput(index, e)}
-                  onKeyUp={(e) => handleWordCheck()}
+                  onKeyUp={handleWordCheck}
                   ref={(inputRef) => (inputRefs.current[index] = inputRef)}
                 />
               </div>
             ))}
-          </div>
-          <div className={displayGame ? 'definition-container' : 'definition-container hidden'}>
-            <div className="definition-title">definition</div>
-            <div className="definition-content">{definition?.toLowerCase()}</div>
-          </div>
+        </div>
+        <div className={`definition-container ${displayGame ? "" : "hidden"}`}>
+          <div className="definition-title">definition</div>
+          <div className="definition-content">{definition?.toLowerCase()}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
