@@ -51,7 +51,7 @@ const App = () => {
       <div onClick={scrollToTop} className={homeLinkVisible ? 'link home-link' : 'link home-link hidden-link'}>&#x2963;</div>
       <div onClick={scrollToProjects} className={downLinkVisible ? 'link projects-link' : 'link projects-link hidden-link'}>&#x2965;</div>
       <div onClick={showAbout} className={downLinkVisible ? 'link about-link' : 'link about-link hidden-link'}>about</div>
-      <div onClick={showContact} className={downLinkVisible ? 'link contact-link' : 'link contact-link hidden-link'}>twperkins.work@gmail.com</div>
+      <div onClick={showContact} className={downLinkVisible ? 'link contact-link' : 'link contact-link hidden-link'}>contact</div>
 
       <Welcome />
 

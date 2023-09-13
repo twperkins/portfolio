@@ -7,6 +7,8 @@ const WordGame = () => {
   const [definition, setDefinition] = useState(null);
   const [currentInput, setCurrentInput] = useState(Array(words.length).fill(""));
   const [wordGuessed, setWordGuessed] = useState(false);
+  const [displayGame, setDisplayGame] = useState(false);
+  const inputRefs = useRef(Array(words.length).fill(null));
 
   useEffect(() => {
     fetch('https://random-word-api.herokuapp.com/word?number=20&length=9')
@@ -38,7 +40,6 @@ const WordGame = () => {
     fetchWordWithDefinition();
   }, [words]);
 
-  const inputRefs = useRef(Array(words.length).fill(null));
 
   const handleNextInput = (index, e) => {
     if (/^[a-zA-Z]$/.test(e.key) && e.key !== e.target.value) {
@@ -61,11 +62,7 @@ const WordGame = () => {
     const inputValue = e.target.value.toLowerCase();
     setCurrentInput((prevInput) => {
       const newInput = [...prevInput];
-      if (currentInput[index] === word[index].toLowerCase()) {
-        newInput[index] = currentInput[index];
-      } else {
-        newInput[index] = inputValue;
-      }
+      newInput[index] = currentInput[index] === word[index].toLowerCase() ? currentInput[index] : inputValue;
       return newInput;
     });
   };
@@ -75,40 +72,48 @@ const WordGame = () => {
     if (allInputsFilled) {
       const isWordGuessed = currentInput.join("").toLowerCase() === word.toLowerCase();
       setWordGuessed(isWordGuessed);
+
       setCurrentInput((prevInput) => {
-        const clearedInput = [...prevInput];
-        currentInput.forEach((input, i) => {
-          if (input !== word[i].toLowerCase()) {
-            clearedInput[i] = "";
-          }
-        });
+        const clearedInput = prevInput.map((input, i) => (input !== word[i].toLowerCase() ? "" : input));
         return clearedInput;
       });
     }
   };
 
+  const showGame = () => {
+    setDisplayGame(!displayGame);
+  };
 
   return (
-    <>
-      <div className="word-container">
-        <div className="letter-container">
-          {word?.split("").map((letter, index) => (
-            <div key={`container${index}`}>
-              <input
-                className={`letter-input ${wordGuessed ? 'guessed' : ''}`}
-                key={`input${index}`}
-                maxLength={1}
-                value={currentInput[index]}
-                onKeyDown={(e) => handleNextInput(index, e)}
-                onKeyUp={(e) => handleWordCheck()}
-                ref={(inputRef) => (inputRefs.current[index] = inputRef)}
-              />
-            </div>
-          ))}
-        </div>
-        <div>definition: {definition}</div>
+    <div className="word-container">
+      <div className={`game-toggle ${displayGame ? "" : "opposite"}`} onClick={showGame}>
+        &#x2963;
       </div>
-    </>
+      <div className="game-title-container">
+        <div className={`game-title ${!displayGame ? "" : "hidden"}`}>can you guess the word?</div>
+      </div>
+      <div className="game-container">
+        <div className={`letter-container ${displayGame ? "" : "hidden"}`}>
+          {word &&
+            word.split("").map((letter, index) => (
+              <div key={`container${index}`}>
+                <input
+                  className={`letter-input ${wordGuessed ? "guessed" : ""}`}
+                  maxLength={1}
+                  value={currentInput[index]}
+                  onKeyDown={(e) => handleNextInput(index, e)}
+                  onKeyUp={handleWordCheck}
+                  ref={(inputRef) => (inputRefs.current[index] = inputRef)}
+                />
+              </div>
+            ))}
+        </div>
+        <div className={`definition-container ${displayGame ? "" : "hidden"}`}>
+          <div className="definition-title">definition</div>
+          <div className="definition-content">{definition?.toLowerCase()}</div>
+        </div>
+      </div>
+    </div>
   );
 };
 

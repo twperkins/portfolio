@@ -17,7 +17,7 @@ const Loading = () => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
-    const intervalId = setInterval(cycleImages, 1050);
+    const intervalId = setInterval(cycleImages, 650);
 
     return () => {
       clearInterval(intervalId);

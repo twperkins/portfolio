@@ -17,7 +17,7 @@
   height: 100vh;
   background-color: $background;
   border-right: solid 1px $highlight;
-  transition: all 1s linear;
+  transition: all 1s ease-in-out;
   transition-delay: 0.3s;
 
   &.closed {
@@ -33,7 +33,7 @@
   height: 100vh;
   background-color: $background;
   border-left: solid 1px $highlight;
-  transition: all 1s linear;
+  transition: all 1s ease-in-out;
   transition-delay: 0.3s;
 
   &.closed {
@@ -55,7 +55,7 @@
   height: 96px;
   width: 48px;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   &.active {
     opacity: 1;
