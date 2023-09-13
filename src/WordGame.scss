@@ -1,23 +1,76 @@
 @import 'colors';
 
 .word-container {
-  width: 288px;
+  width: 280px;
+  height: 180px;
+  border-top: solid 0.5px $highlight;
+  position: relative;
+}
+
+.game-toggle {
+  position: absolute;
+  right: -16px;
+  height: 30px;
+  width: 30px;
+  top: -16px;
+  background-color: $background;
+  border-radius: 30px;
+  text-align: center;
+  border: solid 0.5px $highlight;
+  line-height: 30px;
+  transition: all 0.2s ease-in-out;
+  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
+
+  &.opposite {
+    rotate: (180deg);
+  }
+}
+
+.game-title-container {
+  position: absolute;
+  top: -21px;
+  left: 24px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  &.hidden {
+    top: -24px;
+  }
+}
+
+.game-title {
+  font-size: 20px;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(50px);
+  }
+}
+
+.game-container {
+  overflow: hidden;
 }
 
 .letter-container {
   display: flex;
   gap: 8px;
-  width: 288px;
+  width: 280px;
   justify-content: flex-start;
   align-items: center;
   font-size: 24px;
   text-align: center;
+  margin-top: 24px;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-250px);
+  }
 }
 
 .letter-input {
   background: none;
   border: none;
-  border-bottom: solid 1px $highlight-50;
+  border-bottom: solid 1.5px $highlight-50;
   width: 20px;
   color: $highlight;
   cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
@@ -28,12 +81,12 @@
   text-align: inherit;
 
   &:hover {
-    border-bottom: solid 1px $highlight;
+    border-bottom: solid 1.5px $highlight;
   }
 
   &:focus {
     outline: none;
-    border-bottom: solid 1px $highlight;
+    border-bottom: solid 1.5px $highlight;
   }
 
   &.guessed {
@@ -44,8 +97,16 @@
   }
 }
 
-.definition {
+.definition-container {
   margin-top: 24px;
-  border-left: solid 1px rgba(255, 255, 255, 0.5);
   padding: 8px;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-250px);
+  }
+}
+
+.definition-title {
+  font-size: 20px;
 }
