@@ -18,6 +18,7 @@
   background-color: $background;
   border-right: solid 1px $highlight;
   transition: all 1s linear;
+  transition-delay: 0.3s;
 
   &.closed {
     width: 0;
@@ -33,6 +34,7 @@
   background-color: $background;
   border-left: solid 1px $highlight;
   transition: all 1s linear;
+  transition-delay: 0.3s;
 
   &.closed {
     width: 0;
