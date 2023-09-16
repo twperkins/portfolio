@@ -23,6 +23,7 @@
 
     @media (max-width: 768px) {
       font-size: 300%;
+      padding-top: 0;
     }
   }
 
@@ -68,19 +69,6 @@
 
     @media (max-width: 768px) {
       font-size: 100%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .Welcome {
-    display: block;
-    padding-left: 20vw;
-  }
-
-  .personal-info {
-    h1 {
-      padding-top: 0;
     }
   }
 }
