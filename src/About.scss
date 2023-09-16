@@ -1,19 +1,26 @@
-.About {
-  h2 {
-    text-align: center;
+.about-container {
+  position: absolute;
+  top: 0;
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  overflow: hidden;
+  margin: 10vh 10vw;
+  z-index: 7;
+  transition: all 0.7s ease-in-out;
+  transition-delay: 0.7s;
+  transition-property: transform;
+
+  &.hidden {
+    z-index: 7;
+    transform: translateX(-100vw);
   }
 }
 
-.vertical-timeline-element-content {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+.section-header {
+  font-size: 150%;
 }
 
-.vertical-timeline-element-icon {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-.timeline-title {
-  margin-top: 0px;
+.skills {
+  font-size: 120%;
 }

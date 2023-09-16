@@ -21,20 +21,6 @@ const Welcome = () => {
           />
         </div>
         <WordGame />
-        {/* <div className="personal-description">
-          <h3>Welcome</h3>
-          <p>Hi, Tom here. After studying history at Oxford and working for 4 years in client facing roles, obviously the next logical step was to learn to code...</p>
-          <p>Curently working in a small team of engineers building the future of retail</p>
-          <h3>Skills</h3>
-          <div className="skills">
-            <p>Ruby | JavaScript | Typescript | Python</p>
-            <p>Rails | React | Angular</p>
-            <p>SQL | Postgres | Graphql</p>
-            <p>Git | Kubernetes | Docker | AWS</p>
-          </div> */}
-        {/* <p>Put CV link here</p>
-          <p>Add social links here</p> */}
-        {/* </div> */}
       </div>
     </div>
   )
