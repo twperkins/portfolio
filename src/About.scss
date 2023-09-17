@@ -1,19 +1,107 @@
-.About {
-  h2 {
-    text-align: center;
+@import 'colors';
+
+.about-container {
+  position: fixed;
+  top: 0;
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+  margin: 10vh 10vw;
+  z-index: 7;
+  transition: all 0.7s ease-in-out;
+  transition-delay: 0.7s;
+  transition-property: transform;
+  display: flex;
+
+  &.hidden {
+    z-index: 7;
+    transform: translateX(-100vw);
+  }
+
+  @media (max-width: 768px) {
+    display: block;
   }
 }
 
-.vertical-timeline-element-content {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+.skills-section {
+  padding-right: 24px;
+  border-right: solid 1px $highlight;
+  width: 30vw;
+  text-align: end;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    border-right: none;
+    border-bottom: solid 1px $highlight;
+    padding-bottom: 24px;
+  }
 }
 
-.vertical-timeline-element-icon {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+.section-header {
+  font-size: 160%;
+  border-bottom: solid 1px $highlight;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
 }
 
-.timeline-title {
-  margin-top: 0px;
+.skills {
+  font-size: 120%;
+}
+
+
+.timeline-container {
+  height: 80vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .timeline-title {
+    text-transform: lowercase;
+    font-size: 120%;
+  }
+
+  .timeline-subtitle {
+    text-transform: lowercase;
+    font-size: 130%;
+    border-bottom: solid 1px $highlight;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-current {
+    .timeline-icon {
+      scale: 1.2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+  }
+
+  .vertical-timeline-element-content {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .vertical-timeline-element-icon {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .vertical-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: $highlight;
+  }
+
+  .timeline-icon {
+    background-color: $background;
+  }
 }

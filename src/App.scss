@@ -11,18 +11,80 @@
   overflow: hidden;
 }
 
+.link-container {
+  height: 100vh;
+  width: 5vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  background-color: $background;
+  transition: width 0.7s ease-in-out;
+  transition-delay: 0.7s;
+  transition-property: width, z-index;
+
+  @media (max-width: 768px) {
+    width: 15vw;
+  }
+
+  .side-link-container {
+    height: 100vh;
+    background: linear-gradient($highlight, $highlight) no-repeat center/1px 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in-out;
+
+    &.expanded {
+      background: linear-gradient($highlight, $highlight) no-repeat center/1px 100%;
+    }
+  }
+
+  &.expanded {
+    width: 100vw;
+    z-index: 6;
+
+    .about-link,
+    .contact-link {
+      color: $highlight;
+    }
+  }
+
+  &.left {
+    left: 0;
+    justify-content: flex-end;
+  }
+
+  .about-link {
+    transform: rotate(-90deg);
+    background-color: $background;
+  }
+
+  &.right {
+    right: 0;
+    justify-content: flex-start;
+  }
+
+  .contact-link {
+    transform: rotate(90deg);
+    background-color: $background;
+  }
+}
+
 .link {
   height: auto;
   overflow: visible;
-  opacity: 0.5;
+  color: $highlight-50;
   text-decoration: none;
   text-align: center;
   z-index: 5;
   cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   transition: all 1s linear;
+  padding: 0 12px;
 
   &:hover {
-    opacity: 1;
+    color: $highlight;
     transition: all 0.2s linear;
   }
 }
@@ -56,24 +118,6 @@
     bottom: 5vh;
     transition: all 1s linear;
   }
-}
-
-.about-link {
-  position: fixed;
-  top: 45vh;
-  left: 1.5vw;
-  width: 10vh;
-  transform: rotate(-90deg);
-  text-align: right;
-}
-
-.contact-link {
-  position: fixed;
-  top: 45vh;
-  right: 1.5vw;
-  width: 10vh;
-  transform: rotate(90deg);
-  text-align: left;
 }
 
 .projects-container {

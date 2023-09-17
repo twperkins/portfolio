@@ -14,6 +14,8 @@ const App = () => {
   const [homeLinkVisible, setHomeLinkVisible] = useState(false);
   const [downLinkVisible, setDownLinkVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [aboutSectionVisible, setAboutSectionVisible] = useState(false);
+  const [contactSectionVisible, setContactSectionVisible] = useState(false);
 
   const handleScroll = (event) => {
     const heightToHideFrom = window.screen.height * 0.5;
@@ -34,8 +36,8 @@ const App = () => {
   const projectsCard = useRef(null)
   const scrollToProjects = () => projectsCard.current.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
 
-  const showAbout = () => null;
-  const showContact = () => null;
+  const showAbout = () => setAboutSectionVisible(!aboutSectionVisible);
+  const showContact = () => setContactSectionVisible(!contactSectionVisible);;
 
   useEffect(() => {
     setTimeout(() => {
@@ -43,17 +45,27 @@ const App = () => {
     }, 5300);
   }, []);
 
-
   return (
     <div className="app" onScroll={handleScroll} ref={app}>
       {isLoading && <Loading />}
 
       <div onClick={scrollToTop} className={homeLinkVisible ? 'link home-link' : 'link home-link hidden-link'}>&#x2963;</div>
       <div onClick={scrollToProjects} className={downLinkVisible ? 'link projects-link' : 'link projects-link hidden-link'}>&#x2965;</div>
-      <div onClick={showAbout} className={downLinkVisible ? 'link about-link' : 'link about-link hidden-link'}>about</div>
-      <div onClick={showContact} className={downLinkVisible ? 'link contact-link' : 'link contact-link hidden-link'}>contact</div>
+
+      <div className={aboutSectionVisible ? 'link-container left expanded' : 'link-container left'}>
+        <div className={aboutSectionVisible ? 'side-link-container expanded' : 'side-link-container'}>
+          <div onClick={showAbout} className={downLinkVisible ? 'link about-link' : 'link about-link hidden-link'}>about</div>
+        </div>
+      </div>
+      <div className={contactSectionVisible ? 'link-container right expanded' : 'link-container right'}>
+        <div className={contactSectionVisible ? 'side-link-container expanded' : 'side-link-container'}>
+          <div onClick={showContact} className={downLinkVisible ? 'link contact-link' : 'link contact-link hidden-link'}>contact</div>
+        </div>
+      </div>
 
       <Welcome />
+      <About displaySection={aboutSectionVisible} />
+      <Contact displaySection={contactSectionVisible} />
 
       {!isLoading &&
         <>
@@ -78,22 +90,6 @@ const App = () => {
               <img className="projects-image" src={movies2} alt='movies' />
             </div>
           </div>
-
-          {/* <div ref={firstProject} >
-            <Project
-              images={[perkk1, perkk2]}
-              title="perkk"
-              description="Perkk was a project that I pitched with an aim to give employees greater choice in their workplace perks. After being chosen it was worked on by a team of four. My role was that of team lead which required clear management of planning and the github workflow. The project was compelted a day early with the major challenges being the integration of a range of JS functionality to bring the project to life." />
-            </div>
-            <Project
-              image={[movies1, movies2]}
-              title="movies"
-              description="A quick personal app to make a movie watch list. Pulling data from The Movie Database API it allowed for movies to be sorted into categories and saved for later. An early project that I undertook it cemented a lot of knowledge about CSS and gave a good bedrock for further development."
-            /> */}
-
-          {/* <Welcome />
-            <About />
-            <Contact /> */}
         </>
       }
     </div>
