@@ -1,0 +1,47 @@
+@import 'colors';
+
+.projects-container {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $highlight;
+  cursor: url('./assets/cursor/cursorWhite.svg') 9 9, auto;
+}
+
+.projects-section {
+  height: 100vh;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.projects-title {
+  width: 15vw;
+  padding-left: 5vw;
+  color: $background;
+}
+
+.projects-image {
+  width: calc(20vw - 6px);
+  height: 80vh;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
+  cursor: url('./assets/cursor/cursorClickWhite.svg') 9 9, auto;
+  border-left: solid 8px $translucent;
+
+  &.first {
+    border-left: none;
+  }
+
+  &:hover {
+    width: 30vw;
+    z-index: 5;
+    filter: none;
+  }
+}
