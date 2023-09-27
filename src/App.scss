@@ -7,14 +7,10 @@
   scroll-snap-type: y mandatory;
 }
 
-.no-scroll {
-  overflow: hidden;
-}
-
 .link-container {
   height: 100vh;
   width: 5vw;
-  position: fixed;
+  position: absolute;
   top: 0;
   display: flex;
   align-items: center;
@@ -59,6 +55,7 @@
   .about-link {
     transform: rotate(-90deg);
     background-color: $background;
+    padding: 0 12px;
   }
 
   &.right {
@@ -69,6 +66,7 @@
   .contact-link {
     transform: rotate(90deg);
     background-color: $background;
+    padding: 0 12px;
   }
 }
 
@@ -81,7 +79,6 @@
   z-index: 5;
   cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   transition: all 1s linear;
-  padding: 0 12px;
 
   &:hover {
     color: $highlight;
@@ -101,6 +98,12 @@
   top: 3vh;
   left: 45vw;
   width: 10vw;
+  color: $background-50;
+  cursor: url('./assets/cursor/cursorClickWhite.svg') 9 9, auto;
+
+  &:hover {
+    color: $background;
+  }
 
   &.hidden-link {
     top: 1vh;
@@ -118,69 +121,4 @@
     bottom: 5vh;
     transition: all 1s linear;
   }
-}
-
-.projects-container {
-  scroll-snap-align: start;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.projects-image {
-  width: 30vw;
-  height: 80vh;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: all 0.2s linear;
-
-  &:hover {
-    filter: none;
-    height: 85vh;
-    width: 35vw;
-  }
-
-  +.projects-image {
-    margin-left: -10vw;
-  }
-}
-
-.projects-divider {
-  width: 30vw;
-  height: 80vh;
-  transition: all 0.2s linear;
-  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
-
-  &:hover {
-    height: 85vh;
-    width: 35vw;
-  }
-
-  +.projects-divider {
-    margin-left: -10vw;
-  }
-}
-
-.projects-title {
-  width: 25vw;
-  padding-left: 5vw;
-}
-
-.first-image {
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-}
-
-.second-image {
-  clip-path: polygon(20% 0, 85% 0, 100% 100%, 0% 100%);
-}
-
-.third-image {
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 15% 100%);
-}
-
-.fourth-image {
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
 }

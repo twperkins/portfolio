@@ -1,0 +1,15 @@
+@import 'colors';
+
+.page-divider-top {
+  width: 100vw;
+  height: 50vh;
+  background-color: $background;
+}
+
+.page-divider-bottom {
+  width: 100vw;
+  height: 50vh;
+  background-color: $highlight;
+  border-top: double 5vh $background;
+  cursor: url('./assets/cursor/cursorWhite.svg') 9 9, auto;
+}

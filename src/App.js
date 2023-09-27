@@ -1,14 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Loading from './Loading';
 import Welcome from "./Welcome.js";
-import Project from "./Project.js";
+import Projects from './Projects.js';
 import Contact from "./Contact.js";
 import About from "./About.js";
+import PageDivider from './PageDivider';
 import './App.scss';
-import perkk1 from "./assets/portfolio/perkk1.png"
-import movies1 from "./assets/portfolio/movies1.png"
-import perkk2 from "./assets/portfolio/perkk2.png"
-import movies2 from "./assets/portfolio/movies2.png"
 
 const App = () => {
   const [homeLinkVisible, setHomeLinkVisible] = useState(false);
@@ -67,28 +64,12 @@ const App = () => {
       <About displaySection={aboutSectionVisible} />
       <Contact displaySection={contactSectionVisible} />
 
+
       {!isLoading &&
         <>
-          <div className="projects-container" ref={projectsCard}>
-            <div className="projects-divider first-image" >
-              <div className="projects-title">perkk</div>
-              <img className="projects-image" src={perkk1} alt='perkk' />
-            </div>
-            {/* <div className="projects-divider" /> */}
-            <div className="projects-divider second-image" >
-              <div className="projects-title">perkk</div>
-              <img className="projects-image" src={perkk2} alt='perkk' />
-            </div>
-            {/* <div className="projects-divider" /> */}
-            <div className="projects-divider third-image" >
-              <div className="projects-title">perkk</div>
-              <img className="projects-image" src={movies1} alt='movies' />
-            </div>
-            {/* <div className="projects-divider" /> */}
-            <div className="projects-divider fourth-image" >
-              <div className="projects-title">perkk</div>
-              <img className="projects-image" src={movies2} alt='movies' />
-            </div>
+          <PageDivider />
+          <div ref={projectsCard}>
+            <Projects />
           </div>
         </>
       }
