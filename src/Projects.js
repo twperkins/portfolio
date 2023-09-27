@@ -33,12 +33,25 @@ const Projects = () => {
 
   const openProject = (project) => project === selectedProject ? setSelectedProject(null) : setSelectedProject(project);
 
+  const projectClass = (project) => {
+    if (selectedProject) {
+      if (selectedProject === project) {
+        return 'selected-project-container';
+      } else {
+        return 'unselected-project-container';
+      }
+    } else {
+      return 'project-container';
+    }
+  };
+
+
   return (
     <div className="projects-container">
       <div className="projects-section" >
         {
           ProjectDetails.map((project) => (
-            <div className={selectedProject ? project === selectedProject ? 'selected-project-container' : 'unselected-project-container' : 'project-container'} key={`container-${project.id}`}>
+            <div className={projectClass(project)} key={`container-${project.id}`}>
               <img
                 className="project-image"
                 src={project.image} alt={project.alt}
