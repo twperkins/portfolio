@@ -68,7 +68,9 @@ const App = () => {
       {!isLoading &&
         <>
           <PageDivider />
-          <Projects ref={projectsCard} />
+          <div ref={projectsCard}>
+            <Projects />
+          </div>
         </>
       }
     </div>
