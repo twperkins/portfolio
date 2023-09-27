@@ -38,7 +38,7 @@ const Projects = () => {
       <div className="projects-section" >
         {
           ProjectDetails.map((project) => (
-            <div className={project === selectedProject ? 'selected-project-container' : 'project-container'} key={`container-${project.id}`}>
+            <div className={selectedProject ? project === selectedProject ? 'selected-project-container' : 'unselected-project-container' : 'project-container'} key={`container-${project.id}`}>
               <img
                 className="project-image"
                 src={project.image} alt={project.alt}
