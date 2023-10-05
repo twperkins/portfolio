@@ -9,22 +9,34 @@ const ProjectDetails = [
   {
     id: 0,
     image: perkk1,
-    alt: 'perkk'
+    header: 'perkk',
+    copy: 'blah blah blah blah blah blah blah',
+    link: '',
+    linkName: 'github',
   },
   {
     id: 1,
     image: movies1,
-    alt: 'movies'
+    header: 'movies',
+    copy: 'blah blah blah blah blah blah blah',
+    link: '',
+    linkName: 'github',
   },
   {
     id: 2,
     image: perkk2,
-    alt: 'finbourne'
+    header: 'finbourne',
+    copy: 'blah blah blah blah blah blah blah',
+    link: '',
+    linkName: 'website',
   },
   {
     id: 3,
     image: movies2,
-    alt: 'appear here'
+    header: 'appear here',
+    copy: 'blah blah blah blah blah blah blah',
+    link: '',
+    linkName: 'website',
   }
 ]
 
@@ -33,31 +45,21 @@ const Projects = () => {
 
   const openProject = (project) => project === selectedProject ? setSelectedProject(null) : setSelectedProject(project);
 
-  const projectClass = (project) => {
-    if (selectedProject) {
-      if (selectedProject === project) {
-        return 'selected-project-container';
-      } else {
-        return 'unselected-project-container';
-      }
-    } else {
-      return 'project-container';
-    }
-  };
-
 
   return (
     <div className="projects-container">
+      <div className="projects-header">projects</div>
       <div className="projects-section" >
         {
           ProjectDetails.map((project) => (
-            <div className={projectClass(project)} key={`container-${project.id}`}>
+            <div className="project-container" key={`container-${project.id}`}>
               <img
                 className="project-image"
                 src={project.image} alt={project.alt}
                 onClick={() => openProject(project)}
                 key={`image-${project.id}`}
               />
+              <div className="project-header">{project.header}</div>
             </div>
           ))
         }

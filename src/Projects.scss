@@ -10,6 +10,20 @@
   justify-content: center;
   background-color: $highlight;
   cursor: url('./assets/cursor/cursorWhite.svg') 9 9, auto;
+  position: relative;
+}
+
+.projects-header {
+  position: absolute;
+  top: 15vh;
+  left: 3vw;
+  font-size: 130%;
+  color: $background;
+  border-right: solid 0.5px $background;
+  min-height: 10vh;
+  margin-right: 1vw;
+  padding-right: 1vw;
+  padding-top: 2vh;
 }
 
 .projects-section {
@@ -18,34 +32,17 @@
   flex-wrap: wrap;
   gap: 20px;
   overflow: hidden;
-  position: relative;
   transition: all 0.2s ease-in-out;
 }
 
 .project-container {
   flex: 1;
   transition: all 0.2s ease-in-out;
+  transform: translateY(4vh);
 
   &:hover {
-    flex: 2;
+    transform: translateY(0);
   }
-}
-
-.selected-project-container {
-  transition: all 0.2s ease-in-out;
-  flex: 4;
-  object-fit: cover;
-  z-index: 5;
-
-  .project-image {
-    filter: none;
-  }
-}
-
-.unselected-project-container {
-  transition: all 0.2s ease-in-out;
-  flex: 0;
-  object-fit: cover;
 }
 
 .project-image {
@@ -57,7 +54,15 @@
   cursor: url('./assets/cursor/cursorClickWhite.svg') 9 9, auto;
 
   &:hover {
-    z-index: 3;
     filter: none;
   }
+}
+
+.project-header {
+  font-size: 150%;
+  color: $background;
+  margin-top: 4px;
+  border-top: solid 0.5px $background;
+  width: 50%;
+  padding: 0 4px;
 }

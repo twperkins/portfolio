@@ -8,7 +8,7 @@
   align-items: flex-start;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding: 10vh 20vw;
     height: 80vh;
@@ -21,7 +21,7 @@
     font-size: 400%;
     margin-bottom: 0px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 300%;
       padding-top: 0;
     }
@@ -32,7 +32,7 @@
     color: $highlight;
     font-size: 200%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 150%;
     }
   }
@@ -40,7 +40,7 @@
   .typewriter-cursor {
     font-size: 200%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 150%;
     }
   }
@@ -59,7 +59,7 @@
     margin-top: 5vh;
     font-size: 150%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 120%;
     }
   }
@@ -67,7 +67,7 @@
   p {
     font-size: 120%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       font-size: 100%;
     }
   }

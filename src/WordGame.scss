@@ -7,7 +7,7 @@
   position: relative;
   margin-top: 23vh;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 240px;
   }
 }
@@ -45,7 +45,7 @@
     transform: translateY(50px);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 120%;
   }
 }
@@ -69,7 +69,7 @@
     transform: translateY(-250px);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 240px;
     font-size: 120%;
   }
@@ -101,7 +101,7 @@
     cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 15px;
   }
 }
@@ -119,7 +119,7 @@
 .definition-title {
   font-size: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 120%;
   }
 }
