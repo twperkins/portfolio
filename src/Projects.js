@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Projects.scss';
+
 import perkk1 from "./assets/portfolio/perkk1.png"
 import movies1 from "./assets/portfolio/movies1.png"
 import perkk2 from "./assets/portfolio/perkk2.png"
@@ -18,7 +19,7 @@ const ProjectDetails = [
     id: 1,
     image: perkk1,
     header: 'perkk',
-    copy: 'Perkk was a project that I pitched with an aim to give employees greater choice in their workplace perks. After being chosen it was worked on by a team of four. My role was that of team lead which required clear management of planning and the github workflow. The project was compelted a day early with the major challenges being the integration of a range of JS functionality to bring the project to life.',
+    copy: 'Perkk was a project that I pitched with an aim to give employees greater choice in their workplace perks. After being chosen it was worked on by a team of four. My role was that of team lead which required clear management of planning and the github workflow. The project was completed a day early with the major challenges being the integration of a range of JS functionality to bring the project to life.',
     link: '',
     linkName: 'github',
   },
@@ -45,33 +46,35 @@ const Projects = () => {
 
   const openProject = (project) => setSelectedProject(project);
 
-
   return (
     <div className="projects-container">
       <div className="projects-header">
         <div>{selectedProject?.header || 'projects'}</div>
       </div>
-      <div className="projects-section" >
-        {
-          ProjectDetails.map((project) => (
-            <div className={selectedProject === project ? "project-container selected" : selectedProject ? "project-container hidden" : "project-container"} key={`container-${project.id}`}>
-              <img
-                className="project-image"
-                src={project.image} alt={project.alt}
-                onClick={() => openProject(project)}
-                key={`image-${project.id}`}
-              />
-              <div className="project-header">{project.header}</div>
-            </div>
-          ))
-        }
+      <div className="projects-section">
+        {ProjectDetails.map((project) => (
+          <div
+            className={`project-container ${selectedProject === project ? "selected" : selectedProject ? "hidden" : ""}`}
+            key={`container-${project.id}`}
+            onClick={() => openProject(project)}
+          >
+            <img
+              className="project-image"
+              src={project.image}
+              alt={project.alt}
+              key={`image-${project.id}`}
+            />
+            <div className="project-header">{project.header}</div>
+          </div>
+        ))}
       </div>
-      <div className={selectedProject ? "selected-project-container" : "selected-project-container hidden"}>
-        {selectedProject &&
+      <div className={`selected-project-container ${selectedProject ? "" : "hidden"}`}>
+        {selectedProject && (
           <div className="selected-project-top">
             <img
               className="selected-project-image"
-              src={selectedProject.image} alt={selectedProject.alt}
+              src={selectedProject.image}
+              alt={selectedProject.alt}
             />
             <div>
               <div className="selected-project-return" onClick={() => openProject(null)}>&#x2962; return</div>
@@ -79,7 +82,7 @@ const Projects = () => {
               <a className="selected-project-link" href={selectedProject.link}>{selectedProject.linkName}</a>
             </div>
           </div>
-        }
+        )}
       </div>
     </div>
   )
