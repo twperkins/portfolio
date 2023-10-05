@@ -28,7 +28,7 @@ const About = ({ displaySection }) => {
             <div className="timeline-title">Full Stack Engineer</div>
             <div className="timeline-subtitle">Appear Here</div>
             <div>
-              One of 3 engineers taking ownership of the development journey from idea to deployment.
+              I am currently working as one of two engineers transforming a 10 year old monolith into a flexible and streamlined platform.
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -40,7 +40,7 @@ const About = ({ displaySection }) => {
             <div className="timeline-title">Graduate Engineer</div>
             <div className="timeline-subtitle">Finbourne Technology</div>
             <div>
-              Working within the web team, I implemented complex financial data APIs into the core web platform.
+              My first job on my coding journey saw me working in the web team at Finbourne. The main focus was implementing complex financial data APIs into the core web platform.
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -64,7 +64,7 @@ const About = ({ displaySection }) => {
             <div className="timeline-title">Full Stack Developer Student</div>
             <div className="timeline-subtitle">Le Wagon</div>
             <div>
-              I undertook a 9 week intensive bootcamp to fulfil a career shift from talking about the future to making the future.
+              I undertook a 9 week intensive bootcamp to fulfil a career shift to become a developer. In addition to getting to grips with core web dev skills, I also gained a newfound appreciation for the entire product I had been working with before.
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -100,7 +100,7 @@ const About = ({ displaySection }) => {
             <div className="timeline-title">B.A. History (Ancient and Modern)</div>
             <div className="timeline-subtitle">University of Oxford</div>
             <div>
-              Spent 3 far too brief years spent delving into history at Oxford. Following my interests, I specialised in the collapse of the Roman Republic for the ancient aspect and the Medieval and late Early Modern periods for the modern parts.
+              Spent 3 years spent delving into history at Oxford. Following my interests, I specialised in the collapse of the Roman Republic for the ancient aspect and the Medieval and late Early Modern periods for the modern parts.
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -112,7 +112,7 @@ const About = ({ displaySection }) => {
             <div className="timeline-title">A Levels (A*AAA)</div>
             <div className="timeline-subtitle">Marlborough College</div>
             <div>
-              5 undoubtedly formative years. Whilst history was always my passion, with an eye to the future I ignored those asking "when will we ever use this" in maths. That certainly paid off 10 years later when I explored coding!
+              Whilst history was always my passion, with an eye to the future I ignored those asking "when will we ever use this" in maths. That certainly paid off 10 years later when I explored coding!
             </div>
           </VerticalTimelineElement>
         </VerticalTimeline>
