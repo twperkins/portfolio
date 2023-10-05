@@ -20,7 +20,7 @@
   transition-delay: 0.7s;
   transition-property: width, z-index;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 15vw;
   }
 
