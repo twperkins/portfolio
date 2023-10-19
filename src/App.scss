@@ -1,264 +1,124 @@
-.App {
-  width: 100vw;
+@import 'colors';
+
+.app {
   position: relative;
-  perspective: 1px;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
-.background {
-  transform: translateZ(-4px) scale(5);
-}
-
-.main-section {
+.link-container {
+  height: 100vh;
+  width: 5vw;
   position: absolute;
-  top: 0px;
-  left: 7.5vw;
-  width: 85vw;
-  margin: 32px auto;
-}
-
-.logo {
-  height: 40px;
-  width: 40px;
-}
-
-.navigation {
+  top: 0;
   display: flex;
-  justify-content: space-between;
-  height: 40px;
-  padding-bottom: 5vh;
-}
-
-.navigation-sub {
-  a {
-    margin: 0px 1vw;
-    padding-left: 1vw;
-    line-height: 45px;
-    height: 45px;
-    text-decoration: none;
-    color: black;
-    font-size: 110%;
-    vertical-align: middle;
-    transition: all ease-in-out 0.3s;
-  }
-}
-
-.display-options {
-  height: 140px;
-  width: 60px;
-  position: sticky;
-  top: calc(50vh - 85px);
-  left: -2px;
+  align-items: center;
   z-index: 5;
-  border: solid 2px black;
-  box-shadow: 5px 5px;
+  background-color: $background;
+  transition: width 0.7s ease-in-out;
+  transition-delay: 0.7s;
+  transition-property: width, z-index;
 
-  .fa {
-    display: block;
-    font-weight: 300;
-    margin: 16px;
-    font-size: 80%;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    border: solid 2px black;
-    text-align: center;
-    transition: all ease-out 0.3s;
-    cursor: pointer;
+  @media (max-width: 1024px) {
+    width: 15vw;
+  }
 
-    &:hover {
-      font-size: 90%;
-      color: white;
-      background-color: black;
+  .side-link-container {
+    height: 100vh;
+    background: linear-gradient($highlight, $highlight) no-repeat center/1px 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s ease-in-out;
+
+    &.expanded {
+      background: linear-gradient($highlight, $highlight) no-repeat center/1px 100%;
     }
+  }
+
+  &.expanded {
+    width: 100vw;
+    z-index: 6;
+
+    .about-link,
+    .contact-link {
+      color: $highlight;
+    }
+  }
+
+  &.left {
+    left: 0;
+    justify-content: flex-end;
+  }
+
+  .about-link {
+    transform: rotate(-90deg);
+    background-color: $background;
+    padding: 0 12px;
+  }
+
+  &.right {
+    right: 0;
+    justify-content: flex-start;
+  }
+
+  .contact-link {
+    transform: rotate(90deg);
+    background-color: $background;
+    padding: 0 12px;
   }
 }
 
-.mono {
-  .background {
-    background-image: url(./assets/mountain.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 150vh;
-  }
+.link {
+  height: auto;
+  overflow: visible;
+  color: $highlight-50;
+  text-decoration: none;
+  text-align: center;
+  z-index: 5;
+  cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
+  transition: all 1s linear;
 
-  .logo {
-    filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(58deg) brightness(108%) contrast(101%);
-  }
-
-  .navigation {
-    border-bottom: solid 1px white;
-  }
-
-  .navigation-sub {
-    a {
-      color: white;
-      text-shadow: 5px 5px 3px #ffffff00;
-
-      &:before {
-        content: "<";
-      }
-
-      &:after {
-        content: " />";
-      }
-
-      &:hover {
-        font-size: 120%;
-        text-shadow: 0px 5px 3px #00000034;
-      }
-    }
-  }
-
-  .display-options {
-    border: solid 2px white;
-    box-shadow: 5px 5px;
-
-    .fa {
-      border: solid 2px white;
-
-      &:hover {
-        color: black;
-        background-color: white;
-      }
-    }
+  &:hover {
+    color: $highlight;
+    transition: all 0.2s linear;
   }
 }
 
-.tint {
-  .background {
-    background: linear-gradient(to right, #f7797d80, #fbd88680, #c6ffdd80), url(https://grainy-gradients.vercel.app/noise.svg);
-    height: 150vh;
+.hidden-link {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.home-link {
+  position: fixed;
+  top: 3vh;
+  left: 45vw;
+  width: 10vw;
+  color: $background-50;
+  cursor: url('./assets/cursor/cursorClickWhite.svg') 9 9, auto;
+
+  &:hover {
+    color: $background;
   }
 
-  .logo {
-    filter: invert(10%) sepia(7%) saturate(7285%) hue-rotate(208deg) brightness(89%) contrast(83%);
-  }
-
-  .navigation-sub {
-    a {
-      color: #282842;
-      border: solid 0.5px #28284280;
-      padding: 8px 16px;
-      border-radius: 30px;
-
-      &:hover {
-        color: white;
-        background-color: #f7797d;
-        border: solid 0.5px #f7797d;
-        transition: background-color 0.5s, color 0.5s 0.15s;
-      }
-    }
-  }
-
-  .display-options {
-    border: solid 2px rgba(255, 255, 255, 0);
-    box-shadow: 5px 5px 10px #f7797d46;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-
-    .fa {
-      color: #282842;
-      border: solid 2px #282842;
-      border-radius: 50%;
-
-      &:hover {
-        color: #f7797d;
-        background-color: #282842;
-      }
-    }
-
-    .fa-adjust {
-      background-color: #fbd88680;
-    }
-
-    .fa-paint-brush {
-      background-color: #f7797d80;
-    }
-
-    .fa-newspaper-o {
-      background-color: #a4dbba80;
-    }
+  &.hidden-link {
+    top: 1vh;
+    transition: all 1s linear;
   }
 }
 
-.type {
-  .navigation-sub {
-    a {
-      border-bottom: solid 1px rgba(0, 0, 0, 0);
-      position: relative;
+.projects-link {
+  position: fixed;
+  bottom: 3vh;
+  left: 45vw;
+  width: 10vw;
 
-      &:hover {
-        font-size: 140%;
-      }
-
-      &:after {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        -webkit-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        content: "";
-        width: 0%;
-      }
-
-      &:hover:after {
-        width: 100%;
-        border-bottom: solid 1px black;
-      }
-    }
-  }
-
-  .display-options {
-    background-color: black;
-    box-shadow: none;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-
-    .fa {
-      color: cornsilk;
-      border: solid 2px cornsilk;
-      border-radius: 4px;
-
-      &:hover {
-        color: black;
-        background-color: cornsilk;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .mono {
-    .display-options {
-      background-color: rgb(82, 99, 133);
-    }
-  }
-
-  .navigation-sub {
-    a {
-      font-size: 80%;
-    }
-  }
-
-  .mono,
-  .type {
-    .navigation-sub {
-      &:hover {
-        font-size: 90%;
-      }
-    }
-  }
-
-  .tint {
-    .navigation-sub {
-      a {
-        padding: 2px 4px;
-        border-radius: 10px;
-      }
-    }
+  &.hidden-link {
+    bottom: 5vh;
+    transition: all 1s linear;
   }
 }

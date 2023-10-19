@@ -1,60 +1,79 @@
-import React from 'react';
-import logo from './logo.svg';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react';
+import Loading from './Loading';
 import Welcome from "./Welcome.js";
-import Projects from "./Projects.js";
+import Projects from './Projects.js';
 import Contact from "./Contact.js";
 import About from "./About.js";
+import PageDivider from './PageDivider';
 import './App.scss';
-import 'font-awesome/css/font-awesome.min.css';
 
-function App() {
-  const addMono = () => {
-    document.body.classList.add('mono');
-    document.body.classList.remove('tint');
-    document.body.classList.remove('type');
+const App = () => {
+  const [homeLinkVisible, setHomeLinkVisible] = useState(false);
+  const [downLinkVisible, setDownLinkVisible] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [aboutSectionVisible, setAboutSectionVisible] = useState(false);
+  const [contactSectionVisible, setContactSectionVisible] = useState(false);
+
+  const handleScroll = (event) => {
+    const heightToHideFrom = window.screen.height * 0.5;
+    const winScroll = event.target.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      setHomeLinkVisible(true);
+      setDownLinkVisible(false);
+    } else {
+      setHomeLinkVisible(false);
+      setDownLinkVisible(true);
+    }
   }
 
-  const addTint = () => {
-    document.body.classList.add('tint');
-    document.body.classList.remove('mono');
-    document.body.classList.remove('type');
-  }
+  const app = useRef(null)
+  const scrollToTop = () => app.current.scrollTo({ top: 0, behavior: "smooth", block: "end", inline: "nearest" })
 
-  const addType = () => {
-    document.body.classList.add('type');
-    document.body.classList.remove('mono');
-    document.body.classList.remove('tint');
-  }
+  const projectsCard = useRef(null)
+  const scrollToProjects = () => projectsCard.current.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+
+  const showAbout = () => setAboutSectionVisible(!aboutSectionVisible);
+  const showContact = () => setContactSectionVisible(!contactSectionVisible);;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5300);
+  }, []);
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <div className="display-options">
-          <i className="fa fa-adjust" onClick={addMono}></i>
-          <i className="fa fa-paint-brush" onClick={addTint}></i>
-          <i className="fa fa-newspaper-o" onClick={addType}></i>
-        </div>
-        <div className="background"></div>
-        <div className="main-section">
-          <div className="navigation">
-            <img src={logo} className="logo" alt="Logo" />
-            <div className="navigation-sub">
-              <Link to="/" className="item">Welcome</Link>
-              <Link to="/projects" className="item">Projects</Link>
-              <Link to="/about" className="item">About</Link>
-              <Link to="/contact" className="item">Contact</Link>
-            </div>
-          </div>
+    <div className="app" onScroll={handleScroll} ref={app}>
+      {isLoading && <Loading />}
 
-          <Route exact path="/" component={Welcome} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+      <div onClick={scrollToTop} className={homeLinkVisible ? 'link home-link' : 'link home-link hidden-link'}>&#x2963;</div>
+      <div onClick={scrollToProjects} className={downLinkVisible ? 'link projects-link' : 'link projects-link hidden-link'}>&#x2965;</div>
 
+      <div className={aboutSectionVisible ? 'link-container left expanded' : 'link-container left'}>
+        <div className={aboutSectionVisible ? 'side-link-container expanded' : 'side-link-container'}>
+          <div onClick={showAbout} className={downLinkVisible ? 'link about-link' : 'link about-link hidden-link'}>about</div>
         </div>
       </div>
-    </BrowserRouter>
+      <div className={contactSectionVisible ? 'link-container right expanded' : 'link-container right'}>
+        <div className={contactSectionVisible ? 'side-link-container expanded' : 'side-link-container'}>
+          <div onClick={showContact} className={downLinkVisible ? 'link contact-link' : 'link contact-link hidden-link'}>contact</div>
+        </div>
+      </div>
+
+      <Welcome />
+      <About displaySection={aboutSectionVisible} />
+      <Contact displaySection={contactSectionVisible} />
+
+
+      {!isLoading &&
+        <>
+          <PageDivider />
+          <div ref={projectsCard}>
+            <Projects />
+          </div>
+        </>
+      }
+    </div>
   );
 }
 

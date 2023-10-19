@@ -1,0 +1,63 @@
+@import 'colors';
+
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.loading-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: $background;
+  border-right: solid 1px $highlight;
+  transition: all 1s ease-in-out;
+  transition-delay: 0.3s;
+
+  &.closed {
+    width: 0;
+  }
+}
+
+.loading-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: $background;
+  border-left: solid 1px $highlight;
+  transition: all 1s ease-in-out;
+  transition-delay: 0.3s;
+
+  &.closed {
+    width: 0;
+  }
+}
+
+.loading-image-container {
+  position: absolute;
+  top: calc(50vh - 48px);
+  left: calc(50vw - 24px);
+  height: 96px;
+  width: 48px;
+  background-color: $background;
+}
+
+.loading-image {
+  position: fixed;
+  height: 96px;
+  width: 48px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+  }
+}

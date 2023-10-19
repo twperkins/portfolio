@@ -1,26 +1,16 @@
+@import 'colors';
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: calc(100vh - 32px);
+  height: 100vh;
+  background-color: $background;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: $highlight;
+  cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
 }
 
 h2 {
   font-size: 200%;
-}
-
-.mono {
-  font-family: 'Barlow Condensed', sans-serif;
-  color: white;
-}
-
-.tint {
-  font-family: 'Poiret One', cursive;
-  color: #282842;
-  text-transform: lowercase;
-}
-
-.type {
-  font-family: 'Special Elite', cursive;
-  background-color: cornsilk;
 }

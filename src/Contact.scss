@@ -1,27 +1,47 @@
-.Contact {
-  margin-top: 25vh;
-  text-align: center;
+@import 'colors';
+
+.contact-container {
+  position: fixed;
+  top: 0;
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+  margin: 10vh 10vw;
+  z-index: 7;
+  transition: all 0.7s ease-in-out;
+  transition-delay: 0.7s;
+  transition-property: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.hidden {
+    z-index: 7;
+    transform: translateX(100vw);
+  }
+}
+
+.contact-section {
+  border-left: solid 1px $highlight;
+  padding: 12px;
+  width: 50vw;
+}
+
+.contact-content {
+  margin-bottom: 4px;
+  font-size: 110%;
+
   a {
-    color: black;
+    color: $highlight;
+    cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   }
 }
 
 .social-links {
   a {
-    margin: 8px;
+    margin-right: 8px;
     font-size: 200%;
-    color: black;
-  }
-}
-
-.mono {
-  a {
-    color: white;
-  }
-}
-
-.tint {
-  a {
-    color: #282842;
+    color: $highlight;
+    cursor: url('./assets/cursor/cursorClick.svg') 9 9, auto;
   }
 }

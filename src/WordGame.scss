@@ -1,0 +1,125 @@
+@import "colors";
+
+.word-container {
+  width: 280px;
+  height: 180px;
+  border-top: solid 0.5px $highlight;
+  position: relative;
+  margin-top: 23vh;
+
+  @media (max-width: 1024px) {
+    width: 240px;
+  }
+}
+
+.game-toggle {
+  position: absolute;
+  right: 0px;
+  height: 30px;
+  width: 30px;
+  top: -16px;
+  background-color: $background;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 30px;
+  transition: all 0.5s ease-in-out;
+  cursor: url("./assets/cursor/cursorClick.svg") 9 9, auto;
+
+  &.opposite {
+    transform: rotate(180deg);
+  }
+}
+
+.game-title-container {
+  position: absolute;
+  top: -24px;
+  left: 24px;
+  overflow: hidden;
+}
+
+.game-title {
+  font-size: 120%;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(50px);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 120%;
+  }
+}
+
+.game-container {
+  overflow: hidden;
+}
+
+.letter-container {
+  display: flex;
+  gap: 8px;
+  width: 280px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 24px;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-250px);
+  }
+
+  @media (max-width: 1024px) {
+    width: 240px;
+    font-size: 120%;
+  }
+}
+
+.letter-input {
+  background: none;
+  border: none;
+  border-bottom: solid 1.5px $highlight-50;
+  width: 20px;
+  color: $highlight;
+  cursor: url("./assets/cursor/cursorClick.svg") 9 9, auto;
+  transition: all 0.2s linear;
+  caret-color: transparent;
+  font: inherit;
+  font-size: inherit;
+  text-align: inherit;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-bottom: solid 1.5px $highlight;
+  }
+
+  &.guessed {
+    transition: all 0.5s linear;
+    border-bottom: none;
+    width: 14px;
+    cursor: url('./assets/cursor/cursor.svg') 9 9, auto;
+  }
+
+  @media (max-width: 1024px) {
+    width: 15px;
+  }
+}
+
+.definition-container {
+  margin-top: 24px;
+  padding: 8px;
+  transition: all 1s ease-in-out;
+
+  &.hidden {
+    transform: translateY(-250px);
+  }
+}
+
+.definition-title {
+  font-size: 20px;
+
+  @media (max-width: 1024px) {
+    font-size: 120%;
+  }
+}
