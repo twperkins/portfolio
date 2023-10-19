@@ -12,6 +12,10 @@
   cursor: url('./assets/cursor/cursorWhite.svg') 9 9, auto;
   position: relative;
 
+  @media (max-width: 1024px) {
+    align-items: flex-end;
+  }
+
   .projects-header {
     position: absolute;
     top: 15vh;
@@ -24,6 +28,17 @@
     padding-right: 1vw;
     padding-top: 2vh;
     text-align: right;
+
+    @media (max-width: 1024px) {
+      position: unset;
+      top: 0;
+      right: 0;
+      border-right: none;
+      border-bottom: solid 0.5px $background;
+      min-height: unset;
+      margin-right: 10vw;
+      margin-top: -5vh;
+    }
   }
 
   .projects-section {
@@ -32,6 +47,12 @@
     flex-wrap: wrap;
     gap: 20px;
     overflow: hidden;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      padding: 0 10vw;
+      overflow: unset;
+    }
 
     .project-container {
       flex: 1;
@@ -51,6 +72,10 @@
         transition: transform 0.5s ease-in-out 0.5s;
         transform: translateY(100vh);
         width: 0;
+
+        @media (max-width: 1024px) {
+          width: unset;
+        }
       }
     }
 
@@ -61,6 +86,11 @@
       filter: grayscale(100%) invert(20%) sepia(45%) saturate(433%) hue-rotate(131deg) brightness(30%) contrast(96%);
       transition: all 0.2s ease-in-out;
       cursor: url('./assets/cursor/cursorClickWhite.svg') 9 9, auto;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: 10vh;
+      }
 
       &:hover {
         filter: none;
@@ -95,6 +125,10 @@
 
     .selected-project-top {
       display: flex;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
     }
 
     .selected-project-image {
@@ -102,6 +136,12 @@
       width: auto;
       object-fit: cover;
       margin-right: 5vw;
+
+      @media (max-width: 1024px) {
+        margin-bottom: 8px;
+        width: 80vw;
+        height: auto;
+      }
     }
 
     .selected-project-copy {
