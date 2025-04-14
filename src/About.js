@@ -11,8 +11,8 @@ const About = ({ displaySection }) => {
       <div className="skills-section">
         <div className="section-header">skills</div>
         <div className="skills">
-          <div>Ruby | JavaScript | Typescript | Python</div>
-          <div>Rails | React | Angular</div>
+          <div>Ruby | JavaScript | Typescript | C#</div>
+          <div>Rails | React | Angular | Next.js | Express</div>
           <div>SQL | Postgres | Graphql</div>
           <div>Git | Kubernetes | Docker | AWS</div>
         </div>
@@ -21,7 +21,19 @@ const About = ({ displaySection }) => {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="timeline-current"
-            date="2023 - present"
+            date="2024 - Present"
+            iconClassName="timeline-icon"
+            icon={<WorkIcon />}
+          >
+            <div className="timeline-title">Full Stack Engineer</div>
+            <div className="timeline-subtitle">Finbourne Technology</div>
+            <div>
+              Rejoined the Finbourne team, taking the lead on the restucture of the core transaction screen to an API driven approach.
+            </div>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="timeline-work"
+            date="2023 - 2024"
             iconClassName="timeline-icon"
             icon={<WorkIcon />}
           >
